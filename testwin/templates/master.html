@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- added for mobile -->
+  <link rel="stylesheet" href="{% static 'mystyles.css' %}"> 
+</head>
+<body>
+<div class="topnav">
+  <a href="/"><img src="{% static 'pw.png' %}" alt="PW logo" class="logo"></a>
+  <div class="nav-links">
+    <a href="/">HOME</a>
+    <span class="sep">|</span>
+    <a href="/table">TEST PLANNER</a>
+  </div>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

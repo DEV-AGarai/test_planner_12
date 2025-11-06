@@ -1,0 +1,13 @@
+{% extends "master.html" %}
+{% block title %}Syllabus{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>{{ mytest.test_name }} Syllabus</h1>
+    <p><strong>Batch Name:</strong> {{ mytest.batch_name }}</p>
+    <p><strong>Date:</strong> {{ mytest.date }}</p>
+    <p><strong>Test Pattern:</strong> {{ mytest.test_pattern }}</p>
+    <p><strong>Syllabus for Physics:</strong> {{ mytest.physics }}</p>
+    <p><strong>Syllabus for Chemistry:</strong> {{ mytest.chemistry }}</p>
+    <p><strong>Syllabus for Mathematics:</strong> {{ mytest.maths }}</p>
+</div>
+{% endblock %}

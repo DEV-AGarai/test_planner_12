@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+{% block title %}Test Schedule{% endblock %}
+{% block content %}
+<div style="text-align: center;">
+    <h1 class="mainhead">Test Schedule</h1>
+        <p>Click on the test name to view the syllabus.</p>
+        <br>
+</div>
+    <table class="part_table">
+        <thead>
+            <tr>
+                
+                <th>Batch Name</th>
+                <th>Date</th>
+                <th>Test Name</th>
+                <th>Test Pattern</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test in mytests %}
+            <tr>
+                
+                <td>{{ test.batch_name }}</td>
+                <td>{{ test.date }}</td>
+                <td onclick="window.location= 'syllabus/{{ test.id }}'">{{ test.test_name }}</td>
+                <td>{{ test.test_pattern }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

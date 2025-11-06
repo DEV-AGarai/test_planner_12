@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+body {
+  margin:0;
+  font: 600 18px 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.64px;
+  color: #585d74;
+  /* remove direct background image so ::before can handle it with opacity */
+  background-color: #f7f9fb;
+  position: relative; /* create stacking context for pseudo-element */
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('vecteezy_seamless-pattern-with-school-and-office-stationery_13997918.jpg') center/cover no-repeat fixed;
+  opacity: 0.1; /* adjust 0.0 - 1.0 to change transparency */
+  z-index: -1;   /* sits behind page content but above the page background-color */
+  pointer-events: none;
+  /* optional: slightly blur the background */
+  
+}
+.topnav {
+  background-color:#375BDC;
+  color:#ffffff;
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topnav a:link, .topnav a:visited {
+  text-decoration: none;
+  color: #ffffff; 
+}
+.topnav a:hover, .topnav a:active {
+  text-decoration: underline;
+}
+.topnav .logo {
+  height: 36px;            /* adjust size */
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* new: group nav links and push them to the right */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* optional: lighter separator */
+.nav-links .sep {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ensure link styling inside grouped links */
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+.card h1{
+  text-align: center !important;
+}
+.part_table {
+  margin: 20px auto;
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+/* Make table horizontally scrollable on small screens */
+.part_table {
+  width: 100%;
+  max-width: 100%;
+  display: table; /* keep semantics on larger screens */
+}
+
+/* fallback: allow horizontal scroll if space is constrained */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive navbar and layout */
+@media (max-width: 800px) {
+  .topnav {
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+
+  .topnav .logo {
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  /* push nav links to new row centered on small screens */
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .card {
+    padding: 16px;
+    margin: 12px;
+    max-width: calc(100% - 24px);
+  }
+
+  .card h1 {
+    font-size: 1.25rem;
+  }
+
+  .part_table th, .part_table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .topnav .logo {
+    height: 28px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  /* make table block-level so it can scroll if needed */
+  .part_table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .part_table thead, .part_table tbody, .part_table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .part_table th, .part_table td {
+    white-space: normal;
+  }
+}
+
+.part_table thead tr {
+  background: linear-gradient(90deg, #ff9a00, #ffd24d); /* orange → yellow */
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+.part_table th, .part_table td {
+  padding: 12px 15px;
+}
+.part_table tbody tr {
+  border-bottom: 1px solid #ddd;
+  cursor:pointer;
+}
+.part_table tbody tr:nth-of-type(even) {
+  background-color: #fff6de; /* pale yellow */
+}
+.part_table tbody tr:last-of-type {
+  border-bottom: 2px solid #ff8c00; /* deep orange */
+}
+.part_table tbody tr:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(255,140,0,0.18); /* orange-tinted shadow */
+}
+.mainhead {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+}
